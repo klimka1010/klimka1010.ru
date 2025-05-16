@@ -6,7 +6,7 @@
 
 :root {
     --index: calc(1vw + 1vh);
-    --color-header: #e47d3f;
+    --color-header: #f4efec;
     --color-text: #cdc6c3;
 }
 
@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6, p {
 body{
     background-image: url("/img/bg.png");
     background-size: 1920px;
-    color: #fafafa;
+    color: #f4efec;
     font-family: DelaGO, serif;
     overflow-x: hidden;
 }
