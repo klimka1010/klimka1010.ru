@@ -2,76 +2,79 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>klimka1010</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="img/k1.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
 </head>
+
 <body>
 
-<div data-scroll-container>
-  <div data-scroll-section>
+<div class="background"></div>
 
-    <header class="hero-section" data-scroll-section>
-      <div class="hero">
-        <img src="img/site.png" alt="alt" class="hero-image">
-        <div class="portfolio">
-          <div class="container">
-            <main class="gallery" data-scroll data-scroll-speed="6">
-              <h1 class="main-title" data-scroll data-scroll-speed="3">кутасов <br> клим</h1>
-            </main>
-            <div class="container2">
-              <main class="gallery2" data-scroll data-scroll-speed="6">
-                <br><br>джуниор джава разработчик <br>
-                санкт-петербург <br>
-                итмо
-              </main>
+<div data-scroll-container>
+  <header class="hero-section" >
+    <div class="hero">
+      <!-------------Герой Фото----------->
+      <img src="img/site.png" alt="alt" class="hero-image">
+      <div class="portfolio">
+        <div class="container">
+          <!-------------Герой Текст----------->
+          <main class="gallery" data-scroll data-scroll-speed="3">
+            <h1 class="main-title" data-scroll data-scroll-speed="3">кутасов <br> клим</h1></main>
+
+          <!-------------Герой Жизнь----------->
+          <main class="gallery2-wrapper">
+            <header class="image-wrapper" data-scroll data-scroll-speed="-1">
+              <!-------------  ------------->
+              <img class="spb" src="img/spb.png" alt="alt">
+            </header>
+            <div class="gallery2-text" data-scroll data-scroll-speed="2">
+              <br><br>
+              джуниор джава разработчик <br>
+              санкт-петербург <br>
+              итмо пи '2028
             </div>
-          </div>
+          </main>
         </div>
       </div>
-    </header>
-
-
-    <div class="container3" data-scroll-container>
-      <main class="gallery3-wrapper">
-        <header class="image-wrapper" data-scroll data-scroll-speed="1">
-          <img class="port1" src="img/port1.png" alt="alt">
-        </header>
-
-        <div class="gallery3-text" data-scroll data-scroll-speed="4">
-          Джава кор<br>
-          пост-гре эс кью эль <br>
-          апаче, нгинкс <br>
-          джэй ди би си <br>
-          мавен <br>
-          гит
-        </div>
-      </main>
     </div>
 
 
-    <!--    <div class="container2">-->
-    <!--      <main class="gallery2" data-scroll data-scroll-speed="2">-->
-    <!--        <header class="port1">-->
-    <!--          <img class="port1" src="img/port1.png" alt="alt">-->
-    <!--        </header>-->
-    <!--      </main>-->
-    <!--    </div>-->
+    <div class="container3">
+      <main class="gallery3-wrapper">
+        <header class="image-wrapper" data-scroll data-scroll-speed="-1">
+          <!-------------Портфолио 1 Фото------------->
+          <img class="port1" src="img/port1.png" alt="alt">
+        </header>
 
-
-  </div>
+        <!-------------Портфолио 1 Текст------------->
+        <div class="gallery3-text" data-scroll data-scroll-speed="2">
+          пост-гре эс кью эль <br>
+          апаче, нгинкс <br>
+          джэй ди би си <br>
+          джава <br>
+          мавен <br>
+          веб <br>
+          гит <br>
+        </div>
+      </main>
+    </div>
+  </header>
 </div>
 
+
+<!--Locomotive Scroll скрипт-->
 <script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('load', () => {
     const scroll = new LocomotiveScroll({
       el: document.querySelector('[data-scroll-container]'),
       smooth: true
-    });
+    }); // 200 мс задержки, можно увеличить
   });
+
 </script>
 </body>
 </html>

@@ -3,41 +3,58 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html.has-scroll-smooth {
+    scroll-behavior: auto !important;
+}
+
+[data-scroll-container] {
+    /*will-change: transform;*/
+}
+
 :root {
     --index: calc(1vw + 1vh);
     --color-header: #f4efec;
     --color-text: #cdc6c3;
 }
-html.has-scroll-smooth {
-    scroll-behavior: auto !important;
+
+.background {
+    background-image: url("/img/bg.png");
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
-[data-scroll-container] {
-    will-change: transform;
-}
+
+
 @font-face {
     font-family: DelaGO;
     src: url(fonts/DelaGothicOne-Regular.woff2);
 }
 
 
-
+/*---------- Тело сайта ----------*/
 body {
-    background-image: url("/img/bg.png");
-    background-size: cover;
-    background-position: center;
+    /*background-image: url("/img/bg.png");*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
     color: #f4efec;
     font-family: DelaGO, serif;
     overflow-x: hidden;
 }
 
-
+/*---------- Герой ----------*/
 .hero {
     position: relative;
     height: 100vh;
     width: 100%;
 }
 
-
+/*---------- Герой фото ----------*/
 .hero-image {
     width: 100%;
     height: auto;
@@ -45,11 +62,10 @@ body {
 }
 
 
-
+/*---------- Главный заголовок ----------*/
 .main-title {
     position: relative;
     margin-top: -180rem; /* можно подвинуть вверх поверх картинки */
-    z-index: 10;
     color: #f4efec;
     font-size: calc(var(--index) * 5);
     font-family: DelaGO, sans-serif;
@@ -58,24 +74,37 @@ body {
     padding: 1vh 5vw;
 }
 
-
+/*---------- Шапка ? че)----------*/
 .main-header {
     height: 10vh;
 }
 
+
+/*---------- Контейнеры ----------*/
 .container {
     padding: 0vh 5vw;
 }
 
 .container2 {
-    padding: 1vh 5vw;
+    /*top: 400pt;*/
+    position: relative;
+    overflow: hidden;
+    /*padding: 60vh 5vw; !* добавь отступы вместо "top" *!*/
+    min-height: 10vh; /* например, 60% высоты экрана */
+    /*padding-bottom: 200vh; !* резерв под абсолютный текст *!*/
+    margin-top: 5vh; /* или столько, сколько нужно */
 }
 
 .container3 {
+    padding: 1vh 5vw; /* добавь отступы вместо "top" */
     position: relative;
-    overflow: hidden;
+    margin-top: 150vh; /* или столько, сколько нужно */
+    /*min-height: 100vh;*/
+    overflow: visible;
+
 }
 
+/*---------- Галереи ----------*/
 .gallery, .gallery2, .gallery3 {
     font-size: calc(var(--index) * 2);
     position: relative;
@@ -86,43 +115,82 @@ body {
     color: rgba(196, 196, 196, 0.42);
 }
 
-.gallery2 {
-    color: #c433c4;
-}
-
 .gallery3 {
     color: #33a2c4;
     text-align: right;
 }
 
+.gallery2 {
+    /*top: 100pt; !* подберите нужное значение *!*/
+    /*right: 5%;*/
+    font-size: calc(var(--index) * 3);
+    line-height: 1.2;
+    text-align: left;
+    color: #c433c4;
+}
+
+.gallery2-text {
+    top: 1%;
+    position: absolute;
+    font-size: calc(var(--index) * 2);
+    line-height: 1.2;
+    color: #c433c4;
+    text-align: left;
+    margin-top: 1vh;
+}
+
+.gallery2-wrapper {
+    margin-top: 50vh;
+    height: 100vh; /* добавь это */
+    position: relative;
+}
+
+.gallery3-text {
+    position: absolute;
+    right: 0;
+    /*margin-top: 1v;*/
+    text-align: right;
+    pointer-events: none;
+    font-size: calc(var(--index) * 2);
+    line-height: 1.2;
+    color: #33a2c4;
+    top: 10%; /* уменьшите это значение, например с 20% до 10% */
+
+}
+
+.gallery3-wrapper {
+    position: relative;
+    min-height: 1pt;
+}
+
+
+/*---------- Портфолио 1 ----------*/
 .port1 {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative; /* если нужно */
+    z-index: 1;
+}
+
+
+.spb {
+    z-index: 10;
+    pointer-events: none; /* чтобы не мешала кликам */
+    will-change: transform;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
     width: 100%;
     height: auto;
     display: block;
 }
 
 
-
-
-
-.gallery3-wrapper {
-    position: relative;
-}
-
 .image-wrapper {
     position: relative;
-    width: 100%;
+    min-height: 100vh;
+    overflow: visible;
 }
 
-
-.gallery3-text {
-    position: absolute;
-    top: 20%; /* подберите нужное значение */
-    right: 5%;
-    font-size: calc(var(--index) * 2);
-    line-height: 1.2;
-    color: #33a2c4;
-    text-align: right;
-    pointer-events: none; /* чтобы мышь "проходила сквозь" */
-}
 
